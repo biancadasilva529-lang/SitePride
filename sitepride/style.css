@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* TEMAS DE LEITURA */
+body.theme-dark {
+  background: linear-gradient(135deg, #1e1b2e 0%, #2a2440 100%);
+  color: #f1f0f7;
+}
+
+body.theme-light {
+  background: #f4f4f9;
+  color: #222222;
+}
+
+body.theme-sepia {
+  background: #f4ece1;
+  color: #433422;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Telas */
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Cards e Caixas */
+.card, .story-box, .choices-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Ajustes de caixas para temas claros */
+body.theme-light .card, body.theme-light .story-box, body.theme-light .choices-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+body.theme-sepia .card, body.theme-sepia .story-box, body.theme-sepia .choices-box {
+  background: #e8dfd1;
+  border: 1px solid #d3c4b1;
+}
+
+h1, h2, h3 {
+  color: #bfa2ff;
+  margin-bottom: 15px;
+}
+
+body.theme-light h1, body.theme-light h2, body.theme-light h3 {
+  color: #6b21a8;
+}
+
+body.theme-sepia h1, body.theme-sepia h2, body.theme-sepia h3 {
+  color: #6e4722;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* BARRA DE ACESSIBILIDADE */
+.accessibility-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acc-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.btn-acc {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: inherit;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+body.theme-light .btn-acc {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+body.theme-sepia .btn-acc {
+  background: #d8cbba;
+  border-color: #c4b3a0;
+}
+
+.btn-acc:hover {
+  filter: brightness(1.2);
+}
+
+/* Formulários */
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #4a3f6b;
+  background: #13111c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+body.theme-light input, body.theme-light select, body.theme-light textarea {
+  background: #fff;
+  color: #222;
+  border-color: #ccc;
+}
+
+body.theme-sepia input, body.theme-sepia select, body.theme-sepia textarea {
+  background: #f4ece1;
+  color: #433422;
+  border-color: #bfae99;
+}
+
+/* Botões Principais */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #374151;
+  color: #fff;
+  width: auto;
+  padding: 8px 16px;
+}
+
+.choice-btn {
+  background: #2d264a;
+  color: #e2d9f3;
+  border: 1px solid #6b529c;
+  text-align: left;
+}
+
+body.theme-light .choice-btn {
+  background: #f3e8ff;
+  color: #581c87;
+  border-color: #c084fc;
+}
+
+body.theme-sepia .choice-btn {
+  background: #d8cbba;
+  color: #433422;
+  border-color: #a8947d;
+}
+
+.choice-btn:hover {
+  filter: brightness(1.15);
+}
+
+/* Topbar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: #a855f7;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
