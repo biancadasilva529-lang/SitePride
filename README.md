@@ -1,0 +1,110 @@
+[index.html](https://github.com/user-attachments/files/32379365/index.html)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrideQuest - Histórias Interativas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- TELA DE LOGIN E ONBOARDING -->
+  <div id="login-screen" class="screen active">
+    <div class="card">
+      <h1>ScriptQueer 🌈</h1>
+      <p>Crie seu perfil para iniciar sua jornada interativa.</p>
+      
+      <form id="login-form">
+        <label for="username">Nome / Apelido:</label>
+        <input type="text" id="username" placeholder="Como quer ser chamado(a)?" required>
+
+        <label for="pronouns">Pronomes de preferência:</label>
+        <select id="pronouns" required>
+          <option value="" disabled selected>Selecione...</option>
+          <option value="Ele/Dele">Ele/Dele</option>
+          <option value="Ela/Dela">Ela/Dela</option>
+          <option value="Elu/Delu">Elu/Delu</option>
+          <option value="Outro">Outros / Neutro</option>
+        </select>
+
+        <label for="role">Tipo de Acesso:</label>
+        <select id="role" required>
+          <option value="user">Jogador / Leitor</option>
+          <option value="admin">Administrador (Painel ADM)</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Entrar no Projeto</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TELA DO JOGADOR (HISTÓRIA INTERATIVA) -->
+  <div id="game-screen" class="screen">
+    <header class="top-bar">
+      <h2>PrideQuest</h2>
+      <div id="user-badge" class="badge"></div>
+      <button id="logout-btn" class="btn-secondary">Sair</button>
+    </header>
+
+    <!-- BARRA DE ACESSIBILIDADE E LEITURA -->
+    <div class="accessibility-bar card">
+      <div class="acc-group">
+        <span>Fonte:</span>
+        <button id="btn-font-dec" class="btn-acc" title="Diminuir fonte">A-</button>
+        <button id="btn-font-reset" class="btn-acc" title="Tamanho normal">A</button>
+        <button id="btn-font-inc" class="btn-acc" title="Aumentar fonte">A+</button>
+      </div>
+
+      <div class="acc-group">
+        <span>Tema:</span>
+        <button id="theme-dark" class="btn-acc theme-btn">Escuro</button>
+        <button id="theme-light" class="btn-acc theme-btn">Claro</button>
+        <button id="theme-sepia" class="btn-acc theme-btn">Sépia</button>
+      </div>
+    </div>
+
+    <main class="story-container">
+      <div class="story-box" id="reading-box">
+        <h3 id="story-title">Capítulo 1: O Primeiro Dia</h3>
+        <p id="story-text">Carregando história...</p>
+      </div>
+
+      <div id="choices-container" class="choices-box">
+        <!-- As opções de escolha do jogador aparecem aqui via JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <!-- TELA DO PAINEL ADMINISTRATIVO (ADM) -->
+  <div id="admin-screen" class="screen">
+    <header class="top-bar">
+      <h2>Painel ADM - Gerenciador de Histórias</h2>
+      <button id="admin-logout-btn" class="btn-secondary">Sair</button>
+    </header>
+
+    <main class="admin-container">
+      <div class="card">
+        <h3>Adicionar Novo Capítulo/Cena</h3>
+        <form id="admin-form">
+          <label for="scene-title">Título da Cena:</label>
+          <input type="text" id="scene-title" placeholder="Ex: Capítulo 2 - O Encontro" required>
+
+          <label for="scene-text">Texto da História:</label>
+          <textarea id="scene-text" rows="4" placeholder="Escreva a narrativa..." required></textarea>
+
+          <button type="submit" class="btn-primary">Publicar Alteração no Site</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Estatísticas Rápidas</h3>
+        <p><strong>Usuários Ativos:</strong> 1 (Você)</p>
+        <p><strong>Moderação de Comentários:</strong> 0 pendentes</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
